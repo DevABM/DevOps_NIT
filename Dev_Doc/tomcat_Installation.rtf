@@ -1,0 +1,64 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 hostname tomcat\
+    2  hostname tomcat_server\
+    3  exit\
+    4  amazon-linux-extras install java-openjdk11\
+    5  java -version\
+    6  pwd\
+    7  cd /opt\
+    8  ll\
+    9  wget https://downloads.apache.org/tomcat/tomcat-10/v10.0.27/bin/apache-tomcat-10.0.27.tar.gz.sha512\
+   10  ll\
+   11  tar -xvzf apache-tomcat-10.0.27.tar.gz.sha512\
+   12  cd -\
+   13  cd /opt\
+   14  https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.70/bin/apache-tomcat-9.0.70.tar.gz\
+   15  wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.70/bin/apache-tomcat-9.0.70.tar.gz\
+   16  ll\
+   17  rm apache-tomcat-10.0.27.tar.gz.sha512\
+   18  ll\
+   19  tar -xvzf apache-tomcat-9.0.70.tar.gz\
+   20  ll\
+   21  mv apache-tomcat-9.0.70 tomcat\
+   22  cd tomcat\
+   23  ll\
+   24  cd bin\
+   25  ll\
+   26  ./startup.sh\
+   27  cd ../..\
+   28  cd tomcat\
+   29  ll\
+   30  find / -name context.xml\
+   31  vi /opt/tomcat/conf/context.xml\
+   32  vi /opt/tomcat/webapps/examples/META-INF/context.xml\
+   33  vi /opt/tomcat/webapps/manager/META-INF/context.xml\
+   34  vi /opt/tomcat/webapps/host-manager/META-INF/context.xml\
+   35  cd bin\
+   36  ll\
+   37  ./shutdown.sh\
+   38  ./startup.sh\
+   39  cd ..\
+   40  ll\
+   41  cd conf\
+   42  ll\
+   43  vi tomcat-users.xml\
+   44  ln -s /opt/apache-tomcat-<version>/bin/startup.sh /usr/local/bin/tomcatup\
+   45  ln -s /opt/apache-tomcat-<version>/bin/shutdown.sh /usr/local/bin/tomcatdown\
+   46  ln -s /opt/tomcat/bin/startup.sh /usr/local/bin/tomcatup\
+   47  ln -s /opt/tomcat/bin/shutdown.sh /usr/local/bin/tomcatdown\
+   48  tomcatdown\
+   49  ln -s /opt/tomcat/bin/shutdown.sh /usr/local/bin/tomcatdown\
+   50  tomcatdown\
+   51  cd bin\
+   52  cd -\
+   53  cd bin\
+   54  ./shutdown.sh\
+   55  ./startup.sh\
+   56  history\
+   57  history > tom.txt}
