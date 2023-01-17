@@ -1,0 +1,74 @@
+﻿30  https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz
+   31  wget https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.tar.gz
+   32  ll
+   33  tar -zxvf apache-maven-3.8.6-bin.tar.gz 
+   34  ll
+   35  du -sh apache-maven-3.8.6-bin.tar.gz 
+   36  du -sh apache-maven-3.8.6
+   37  cd apache-maven-3.8.6/
+   38  ll
+   39  mvn archetype:generate
+   40  sudo amazon-linux-extras install epel -y
+   41  sudo amazon-linux-extras install java-openjdk11 -y
+   42  yum install maven -y
+   43  java -version
+   44  mvn --version
+   45  mvn archetype:generate
+   46  ll
+   47  cd devops/
+   48  ll
+   49  yum install tree -y
+   50  ll
+   51  tree
+   52  cat src/main/java/evebatch/App.java 
+   53  cat src/test/java/evebatch/AppTest.java 
+   54  mvn compile
+   55  ll
+   56  tree
+   57  mvn test
+   58  tree
+   59  mvn package
+   60  pwd
+   61  ls target/
+   62  mvn install
+   63  cd /root/.m2/repository/raham/devops/
+   64  ls
+   65  cd 1.0-SNAPSHOT/
+   66  ls
+   67  cd /root/apache-maven-3.8.6/devops/
+   68  ll
+   69  mvn clean
+   70  ll
+   71  mvn compile
+   72  ll
+   73  tree
+   74  mvn test
+   75  tree
+   76  mvn package
+   77  tree
+   78  mvn install
+   79  ll
+   80  mvn clean
+   81  ll
+   82  vim pom.xml 
+
+
+
+
+============================================================
+
+
+JENKINS SETUP:
+
+
+    1  ls /etc/yum.repos.d/
+    2  sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+    3  ls /etc/yum.repos.d/
+    4   sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+    5  sudo amazon-linux-extras install epel java-openjdk11 -y
+    6  python3
+    7  yum install git jenkins maven -y 
+    8  systemctl start jenkins.service 
+    9  systemctl status jenkins.service 
+   10  cd /var/lib/jenkins/secrets/initialAdminPassword
+   11  cat /var/lib/jenkins/secrets/initialAdminPassword
